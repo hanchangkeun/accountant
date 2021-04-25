@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>our people</title>
+    <style>
+        body{margin: 0;}
+        *{box-sizing: border-box}
+        #header{
+            width: 100%;
+            height: 62px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            z-index: 1;
+            background-color: rgb(250, 248, 248);
+        }
+        #header a{
+            display: inline-block;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 12px;
+            text-decoration: none;
+            color: black;
+        }
+        #header>a{
+            padding-left: 120px;
+            font-size: 18px;
+            font-weight: 900;
+        }
+        #header ul{
+            width: 850px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: inline;
+        }
+        #header ul li{
+            display: inline-block;
+        }
+        #header ul li:hover>a{
+            color: red;
+        }
+        #header ul li:hover ul{
+            display: block;
+            border-right: 1px solid rgb(250, 248, 248);
+            border-left: 1px solid rgb(250, 248, 248);
+            box-shadow: gainsboro;
+        }
+        #header ul li ul{
+            position: absolute;
+            width: 150px;
+            display: none;
+        }
+        
+        
+        #header ul li ul li{
+            display: block;
+            background-color: rgb(250, 248, 248);
+        }
+        #header ul li ul li a{
+            display: block !important;
+            font-size: 13px;
+            color: gray;
+            border-bottom: 1px solid rgb(250, 248, 248);
+        }
+        #header ul li ul li:hover{
+            padding-left: 5px;
+            background-color: rgb(250, 248, 248);
+        }
+        #header ul li ul li:hover a{
+            color: red;
+            font-size: 13px;
+        }
+        #ko-en{
+            border: 1px solid gainsboro;
+            border-radius: 30px;
+            background-color: rgb(250, 248, 248);
+        }
+        #ko-en .ko-en-en:hover{
+            color: red;
+        }
+        #ourpeople-box{
+            position: relative;
+        }
+        #ourpeople-box #text1{
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, -70%);
+            font-size: 40px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 10px 15px;
+        }
+        #totop{
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0,0,0,0.7);
+            color: white;
+            position: fixed;
+            top: 520px;
+            right: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #totop a{
+            text-decoration: none;
+            color: white;
+        }
+        .box-container{
+            display: grid;
+            grid-template-columns: 900px 30px 200px;
+            grid-template-rows: 550px;
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+        .box .carrier{
+            display: grid;
+            grid-template-columns: 0.25fr 0.75fr;
+            grid-template-rows: 40px 40px 90px 140px 40px;
+        }
+        .box .carrier .nav1{
+            background-color: beige;
+        }
+        .name{
+            border-bottom: 1px solid gainsboro;
+            height: 40px;
+            font-size: 25px;
+        }
+        .photo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px;
+            
+            border-bottom: 1px solid gainsboro;
+            
+        }
+        .photo img{
+            border-radius: 50%;
+        }
+        .nav1{
+            border-right: 1px solid gainsboro;
+            border-bottom: 1px solid gainsboro;
+            border-left: 1px solid gainsboro;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .nav2{
+            border-right: 1px solid gainsboro;
+            border-bottom: 1px solid gainsboro;
+            display: flex;
+            align-items: center;
+            padding-left: 5px;
+        }
+        div .box:nth-child(3){
+            border: 1px solid gainsboro;
+            padding-left: 20px;
+            line-height: 25px;
+        }
+        div .box:nth-child(3) h2{
+            display: flex;
+            margin-left: 15px;
+            align-items: center;
+            color: skyblue;
+        }
+        div .box:nth-child(3) a{
+            text-decoration: none;
+            color: black;
+        }
+        #footer{
+            display: grid;
+            grid-template-columns: 0.5fr 0.5fr;
+            grid-template-rows: 150px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            margin-top: 200px;
+        }
+        #footer .text-3{
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: 20px;
+            padding-left: 70px;
+            font-size: 10px;
+        }
+        #footer .text-4{
+            text-align: right;
+            padding-top: 30px;
+            font-size: 14px;
+            padding-right: 70px;
+        }
+        #footer .text-4 p{
+            font-size: 10px;
+            margin-top: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="header">
+        <a href="index.html">세정회계법인</a>
+        <ul>
+            <li>
+                <a href="">세정회계법인소개 ∨</a>
+                <ul>
+                    <li><a href="introduction.html">회사소개</a></li>
+                    <li><a href="our people.html">멤버소개</a></li>
+                    <li><a href="contact us.html">오시는길</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="">분야별서비스 ∨</a>
+                <ul>
+                    <li><a href="">회계감사</a></li>
+                    <li><a href="">세무</a></li>
+                    <li><a href="">재무자문</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="">커뮤니티 ∨</a>
+                <ul>
+                    <li><a href="">공지안내</a></li>
+                    <li><a href="">질문과답변</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="">글로벌네트웍</a>
+            </li>
+            <li>
+                <a href="">윤리신고센터</a>
+            </li>
+            <li>
+                <div id="ko-en">
+                    <a href="">korean</a><a class="ko-en-en" href="">english</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="ourpeople-box">
+        <img src="https://images.unsplash.com/photo-1574887467771-684837ef363a?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDQ4fGFldTZyTC1qNmV3fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" alt="" width="100%" height="350px">
+        <p id="text1">Our People</p>
+    </div>
+    <div id="totop">
+        <a href="#ourpeople-box">△</a> 
+     </div>
+    <br>
+    <br>
+    <br>
+    <div class="box-container">
+        <div class="box">
+            <div class="name">♣ 강성일</div>
+            <div class="photo">
+                <img src="창근.jpg" alt="" width="200px" height="200px">
+            </div>
+            <div class="carrier">
+                <div class="nav1">이름</div>
+                <div class="nav2">강성일</div>
+                <div class="nav1">연락처</div>
+                <div class="nav2">sean.kang@finacc.co.kr / 02-574-8805</div>
+                <div class="nav1">자격</div>
+                <div class="nav2">
+                    한국 공인회계사<br>
+                    미국 공인회계사<br>
+                    한국 세무사<br>
+                </div>
+                <div class="nav1">학럭및주요경력</div>
+                <div class="nav2">
+                    전) Deloitte 안건회계법인<br>
+                    전) Johnson & Johnson Medical Korea, Finance Controller<br>
+                    전) 네파㈜, Head of Finance<br>
+                    전) ECOVIS 한신회계법인 국제 Partner<br>
+                    현) MSI 세정회계법인 국제 Partner<br>
+                </div>
+                <div class="nav1">전문분야</div>
+                <div class="nav2">외투법인에 대한 각종 자문</div>
+            </div>
+        </div>
+        <div class="box"></div>
+        <div class="box">
+            <h2>our people</h2>
+            <a href="our people.html">- 강성일</a><br>
+            - 김대년<br>
+            - 김동혁<br>
+            - 김리석<br>
+            - 김석재<br>
+            - 마원호<br>
+            - 박희순<br>
+            - 상신규<br>
+            - 유정하<br>
+            - 이민재<br>
+            - 이종환<br>
+            - 이현식<br>
+            - 장세림<br>
+            - 정권모<br>
+            - 조용옥<br>
+            - 홍경표<br>
+            - 황상원<br>
+        </div>
+    </div>
+    <br>
+    <div id="footer">
+        <div class="text-3">
+            Copyright ⓒ finacc.co.kr. All Rights Reserved
+        </div>
+        <div class="text-4">
+            세정회계법인 | 대표자 : 홍경표 | 주소 : 서울시 서초구 남부순환로 2606 금정빌딩 7층<br>
+            대표이메일 : sean.kang@finacc.co.kr<br><br>
+            <p>Design powered by YouBiz</p> 
+        </div>
+    </div>
+</body>
+</html>

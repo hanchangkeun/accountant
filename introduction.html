@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>introduction</title>
+    <style>
+        body{margin: 0;}
+        *{box-sizing: border-box}
+        #header{
+            width: 100%;
+            height: 62px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            z-index: 1;
+            background-color: rgb(250, 248, 248);
+        }
+        #header a{
+            display: inline-block;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 12px;
+            text-decoration: none;
+            color: black;
+        }
+        #header>a{
+            padding-left: 120px;
+            font-size: 18px;
+            font-weight: 900;
+        }
+        #header ul{
+            width: 850px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: inline;
+        }
+        #header ul li{
+            display: inline-block;
+        }
+        #header ul li:hover>a{
+            color: red;
+        }
+        #header ul li:hover ul{
+            display: block;
+            border-right: 1px solid rgb(250, 248, 248);
+            border-left: 1px solid rgb(250, 248, 248);
+            box-shadow: gainsboro;
+        }
+        #header ul li ul{
+            position: absolute;
+            width: 150px;
+            display: none;
+        }
+        
+        #header ul li ul li{
+            display: block;
+            background-color: rgb(250, 248, 248);
+        }
+        #header ul li ul li a{
+            display: block !important;
+            font-size: 13px;
+            color: gray;
+            border-bottom: 1px solid rgb(250, 248, 248);
+        }
+        #header ul li ul li:hover{
+            padding-left: 5px;
+            background-color: rgb(250, 248, 248);
+        }
+        #header ul li ul li:hover a{
+            color: red;
+            font-size: 13px;
+        }
+        #ko-en{
+            border: 1px solid gainsboro;
+            border-radius: 30px;
+            background-color: rgb(250, 248, 248);
+        }
+        #ko-en .ko-en-en:hover{
+            color: red;
+        }
+        #introduction-box{
+            position: relative;
+        }
+        #introduction-box #text1{
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, -70%);
+            font-size: 40px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 10px 15px;
+        }
+        #totop{
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0,0,0,0.7);
+            color: white;
+            position: fixed;
+            top: 520px;
+            right: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #totop a{
+            text-decoration: none;
+            color: white;
+        }
+        #nav{
+            float: left;
+            margin-top: 70px;
+            margin-left: 70px;
+            margin-right: 30px;
+            margin-bottom: 80px;
+        }
+        #content #text2{
+            font-size: 14px;
+            margin-top: 70px;
+        }
+        #footer{
+            clear: left;
+            display: grid;
+            grid-template-columns: 0.5fr 0.5fr;
+            grid-template-rows: 150px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+        }
+        #footer .text-3{
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: 20px;
+            padding-left: 70px;
+            font-size: 10px;
+        }
+        #footer .text-4{
+            text-align: right;
+            padding-top: 30px;
+            font-size: 14px;
+            padding-right: 70px;
+        }
+        #footer .text-4 p{
+            font-size: 10px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <a href="index.html">세정회계법인</a>
+        <ul>
+            <li>
+                <a href="">세정회계법인소개 ∨</a>
+                <ul>
+                    <li><a href="introduction.html">회사소개</a></li>
+                    <li><a href="our people.html">멤버소개</a></li>
+                    <li><a href="contact us.html">오시는길</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="">분야별서비스 ∨</a>
+                <ul>
+                    <li><a href="">회계감사</a></li>
+                    <li><a href="">세무</a></li>
+                    <li><a href="">재무자문</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="">커뮤니티 ∨</a>
+                <ul>
+                    <li><a href="">공지안내</a></li>
+                    <li><a href="">질문과답변</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="">글로벌네트웍</a>
+            </li>
+            <li>
+                <a href="">윤리신고센터</a>
+            </li>
+            <li>
+                <div id="ko-en">
+                    <a href="">korean</a><a class="ko-en-en" href="">english</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="introduction-box">
+        <img src="https://images.unsplash.com/photo-1574887467771-684837ef363a?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDQ4fGFldTZyTC1qNmV3fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" alt="" width="100%" height="350px">
+        <p id="text1">introduction</p>
+    </div>
+    <div id="totop">
+       <a href="#introduction-box">△</a> 
+    </div>
+    <div id="nav">
+        <img src="https://images.unsplash.com/photo-1601581970389-78b6a52a8dce?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDg1fGFldTZyTC1qNmV3fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" alt="" width="330px" height="500px">
+    </div>
+    <div id="content">
+        <p id="text2"> 
+            고객과의 진정한Business Partnering은 세정회계법인의 궁극적인 가치입니다.<br>
+            <br>
+            >>우리는 어떠한 환경에서도 최고품질의 서비스를 지향합니다.<br>
+            >>우리의 구성원은 각 분야에서 평균 10년이상의 전문실무경험을 보유하고 있는 업계 최고의 전무가 집단입니다.<br>
+            >>우리는 세계 선도적인 회계그룹의 하나인 MSI Global Alliance(“MSI”)의 한국회원사로서 전세계 100개국 이상의 나라<br>
+            에서 각각의 회원사와 함께 가장 효과적이며 효율적인 협업을 진행하고 있습니다.<br>
+            <br>
+            회사의 본점은 서울시 서초구 양재역 5번출구에 위치하고 있으며 수원과 대전의 2개의 지점과 함께 회계감사, 세무자문,<br> 
+            재무자문 등의 서비스를 제공하고 있습니다.<br>
+            <br>
+            귀사의 성공적인 비지니스를 위해 최선을 다하겠습니다.<br>
+            <br>
+            본사: 서울시 서초구 남부순환로 2606 금정빌딩 7층, 대표전화 : 02-3453-0583, 대표팩스 : 02-3453-0584<br>
+            양재분실: 서울시 서초구 바우뫼로 182 S&C빌딩 4층, 대표전화 : 02-529-1017, 대표팩스 : 02-529-1018<br>
+            수원지점: 수원시 영통구 센트럴타운로 98 4층, 대표전화 : 031-211-3445, 대표팩스 : 031-951-1366<br>
+            대전지점: 대전시 서구 둔산동 1397번지 KB 빌딩 502호, 대표전화 : 042-488-3545, 대표팩스 : 042-488-2731
+        </p>
+    </div>
+    <div id="footer">
+        <div class="text-3">
+            Copyright ⓒ finacc.co.kr. All Rights Reserved
+        </div>
+        <div class="text-4">
+            세정회계법인 | 대표자 : 홍경표 | 주소 : 서울시 서초구 남부순환로 2606 금정빌딩 7층<br>
+            대표이메일 : sean.kang@finacc.co.kr<br><br>
+            <p>Design powered by YouBiz</p> 
+        </div>
+    </div>
+
+</body>
+</html>

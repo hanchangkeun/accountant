@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+    <title>세정회계법인2</title>
+    <style>
+        body{margin: 0;}
+        *{box-sizing: border-box}
+        #header{
+            width: 100%;
+            height: 62px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            z-index: 1;
+            background-color: rgb(250, 248, 248);
+        }
+        #header a{
+            display: inline-block;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 12px;
+            text-decoration: none;
+            color: black;
+        }
+        #header>a{
+            padding-left: 120px;
+            font-size: 18px;
+            font-weight: 900;
+        }
+        #header ul{
+            width: 850px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: inline;
+        }
+        #header ul li{
+            display: inline-block;
+        }
+        #header ul li:hover>a{
+            color: red;
+        }
+        #header ul li:hover ul{
+            display: block;
+            border-right: 1px solid rgb(250, 248, 248);
+            border-left: 1px solid rgb(250, 248, 248);
+            box-shadow: gainsboro;
+        }
+        #header ul li ul{
+            position: absolute;
+            width: 150px;
+            display: none;
+        }
+        
+        
+        #header ul li ul li{
+            display: block;
+            background-color: rgb(250, 248, 248);
+        }
+        #header ul li ul li a{
+            display: block !important;
+            font-size: 13px;
+            color: gray;
+            border-bottom: 1px solid rgb(250, 248, 248);
+        }
+        #header ul li ul li:hover{
+            padding-left: 5px;
+            background-color: rgb(250, 248, 248);
+        }
+        #header ul li ul li:hover a{
+            color: red;
+            font-size: 13px;
+        }
+        #ko-en{
+            border: 1px solid gainsboro;
+            border-radius: 30px;
+            background-color: rgb(250, 248, 248);
+        }
+        #ko-en .ko-en-en:hover{
+            color: red;
+        }
+
+        .mySlides {
+            display:none;
+        }
+
+        #header-img{
+            position: relative;
+            width: 100%;
+            height: 600px;
+            margin-top: 50px;
+        }
+        .welcome{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0,0,0,0.7);
+            color: white;
+            font-size: 45px;
+            padding: 10px 20px;
+        }
+        .welcome2{
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, -70%);
+            background: rgba(255,0,0,0.7);
+            color: white;
+            font-size: 15px;
+            padding: 10px 20px;
+        }
+        #totop{
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0,0,0,0.7);
+            color: white;
+            position: fixed;
+            top: 520px;
+            right: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #totop a{
+            text-decoration: none;
+            color: white;
+        }
+        #audit-assurance-box{
+            display: grid;
+            grid-template-columns: 0.5fr 0.5fr;
+            grid-template-rows: 350px;
+        }
+        p#audit-assurance-text{
+            font-size: 24px;
+            font-weight: bold;
+            color: red;
+            margin-top: 100px;
+            margin-left: 150px;
+            line-height: 5px;
+        }
+        p#audit-assurance-text2, p#audit-assurance-text3{
+            font-size: 14px;
+            margin-left: 150px;
+            color: gray;
+        }
+        #audit-assurance-photo{
+            margin-top: 70px;
+            margin-left: 70px;
+            width: 410px;
+            height: 210px;
+            border: 5px solid gainsboro;
+            box-shadow: 3px 3px 15px gainsboro;
+        }
+
+        #tax-consulting-box{
+            display: grid;
+            grid-template-columns: 0.5fr 0.5fr;
+            grid-template-rows: 350px;
+        }
+        #tax-consulting-photo{
+            margin-top: 70px;
+            margin-left: 150px;
+            width: 410px;
+            height: 210px;
+            border: 5px solid gainsboro;
+            box-shadow: 3px 3px 15px gainsboro;
+        }
+        p#tax-consulting-text{
+            font-size: 24px;
+            font-weight: bold;
+            color: red;
+            margin-top: 70px;
+            margin-left: 70px;
+            line-height: 5px;
+        }
+        p#tax-consulting-text2, p#tax-consulting-text3{
+            font-size: 14px;
+            margin-left: 70px;
+            color: gray;
+        }
+
+        #financial-advisory-services-box{
+            display: grid;
+            grid-template-columns: 0.5fr 0.5fr;
+            grid-template-rows: 350px;
+        }
+        p#financial-advisory-services-text{
+            font-size: 24px;
+            font-weight: bold;
+            color: red;
+            margin-top: 100px;
+            margin-left: 150px;
+            line-height: 5px;
+        }
+        p#financial-advisory-services-text2, p#financial-advisory-services-text3{
+            font-size: 14px;
+            margin-left: 150px;
+            color: gray;
+        }
+        #financial-advisory-services-photo{
+            margin-top: 70px;
+            margin-left: 70px;
+            width: 410px;
+            height: 210px;
+            border: 5px solid gainsboro;
+            box-shadow: 3px 3px 15px gainsboro; 
+        }
+
+        #customer-support{
+            display: flex;
+            justify-content: center;
+            font-size: 35px;
+            color: orangered;
+            margin-top: 70px;
+        }
+        #sub-footer{
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 50px;
+        }
+        .photo-text{
+            width: 350px;
+            height: 250px;
+            display: grid;
+            grid-template-columns: 100%;
+            grid-template-rows: 125px;
+            border-top: 1px solid red;
+        }
+        .photo-text .photo{
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+        .photo-text .photo img{
+            border-radius: 50%;
+        }
+        .photo-text .text .text-1{
+            font-size: 18px;
+            color: gray;
+            text-align: center;
+            line-height: 5px;
+        }
+        .photo-text .text .text-2{
+            font-size: 15px;
+            color: gray;
+            text-align: center;
+        }
+        #footer{
+            display: grid;
+            grid-template-columns: 0.5fr 0.5fr;
+            grid-template-rows: 150px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+        }
+        #footer .text-3{
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: 20px;
+            padding-left: 70px;
+            font-size: 10px;
+        }
+        #footer .text-4{
+            text-align: right;
+            padding-top: 30px;
+            font-size: 14px;
+            padding-right: 70px;
+        }
+        #footer .text-4 p{
+            font-size: 10px;
+            margin-top: 30px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="header">
+        <a href="#">세정회계법인</a>
+        <ul>
+            <li>
+                <a href="">세정회계법인소개 ∨</a>
+                <ul>
+                    <li><a href="introduction.html">회사소개</a></li>
+                    <li><a href="our people.html">멤버소개</a></li>
+                    <li><a href="contact us.html">오시는길</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="">분야별서비스 ∨</a>
+                <ul>
+                    <li><a href="">회계감사</a></li>
+                    <li><a href="">세무</a></li>
+                    <li><a href="">재무자문</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="">커뮤니티 ∨</a>
+                <ul>
+                    <li><a href="">공지안내</a></li>
+                    <li><a href="">질문과답변</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="">글로벌네트웍</a>
+            </li>
+            <li>
+                <a href="">윤리신고센터</a>
+            </li>
+            <li>
+                <div id="ko-en">
+                    <a href="">korean</a><a class="ko-en-en" href="">english</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="header-img"> <!-- java script 같이 사용함 -->
+        <img class="mySlides" src="https://images.unsplash.com/photo-1604328699206-5f24c5ed8dd4?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDc1fGFldTZyTC1qNmV3fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" width="100%" height="550px">
+        <img class="mySlides" src="https://images.unsplash.com/photo-1587440871875-191322ee64b0?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDExfGFldTZyTC1qNmV3fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" width="100%" height="550px">
+        <img class="mySlides" src="https://images.unsplash.com/photo-1560264418-c4445382edbc?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDEzfGFldTZyTC1qNmV3fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" width="100%" height="550px">
+        <img class="mySlides" src="https://images.unsplash.com/photo-1611095564985-89765398121e?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDI2fGFldTZyTC1qNmV3fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" width="100%" height="550px">
+        <div class="welcome">Audit and Assurance</div>
+        <div class="welcome2">Read more</div>
+    </div>
+    <div id="totop">
+        <a href="#header-img">△</a> 
+    </div>
+    <div id="audit-assurance-box">
+        <div id="audit-assurance">
+            <p id="audit-assurance-text">Audit and Assurance(회계감사)</p>
+            <p id="audit-assurance-text2">기업의 많은 이해 관계자들의 다양한 의사결정에 영향을 미<br>
+            치므로 그 기업의 재무상태와 경영성과에 대한 정확한 공시가<br>
+            요구되고 있습니다.이에 세정회계법인은 이러한 이해관계자의<br>
+            요구에 부응하여 각 분야 최고의 전문가들로 고객회사에 대해<br>
+            가장 효과적이고 효율적인 감사업무를 지원하고 있습니다.</p>
+            <p id="audit-assurance-text3">√  재무제표 감사<br>
+            √  내부통제 관련 서비스<br>
+            √  재무제표 작성 및 검토 지원서비스</p>
+        </div>
+        <div id="audit-assurance-photo">
+            <img src="https://images.unsplash.com/photo-1595475716260-0f2c35f5a40f?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDc3fGFldTZyTC1qNmV3fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" alt="" width="400px" height="200px">
+        </div>
+    </div>
+    <hr>
+    <div id="tax-consulting-box">
+        <div id="tax-consulting-photo">
+            <img src="https://images.unsplash.com/photo-1600195077909-46e573870d99?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDE2fGFldTZyTC1qNmV3fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" alt="" width="400px" height="200px">
+        </div>
+        <div id="tax-consulting">
+            <p id="tax-consulting-text">Tax Consulting(세무)</p>
+            <p id="tax-consulting-text2">기업경영활동 중 세무는 안정적으로 예측되어야 하며 세무상의<br>
+            주요 문제점들을 사전에 인지하여 충분히 논의 되어야 하며 그에<br>
+            상응한 세무계획 및 최적의 대안이 마련되어야 합니다.<br>
+            세정회계법인은 각 분야 최고의 전문가들로서 고객 상황에 맞는<br>
+            최적은 대안을 제공하고 있습니다.</p>
+
+            <p id="tax-consulting-text3">√  세무신고관련 서비스<br>
+            √  세무자문 서비스<br>
+            √  세무조사 대응 서비스<br>
+            √  Outsourcing 서비스<br>
+            √  국제조세 관련 서비스</p>
+        </div>
+    </div>
+    <hr>
+    <div id="financial-advisory-services-box">
+        <div id="financial-advisory-services">
+            <p id="financial-advisory-services-text">Financial Advisory Services(재무자문)</p>
+            <p id="financial-advisory-services-text2">세정회계법인은 급속도로 변화하고 기업환경의 변화에 능동적으로<br> 
+            대응하기 위하여 다양한 재무자문서비스를 제공하고 있으며, 이는<br> 
+            기업구조조정을 위한 인수합병 자문, 프로젝트파이낸싱, 기업공개<br>
+            자문 등을 포함하고 있습니다.</p>
+
+            <p id="financial-advisory-services-text3">√  인수합병(M&A)<br>
+            √  프로젝트파이낸싱(PF)<br>
+            √  기업공개(IPO)</p>
+        </div>
+        <div id="financial-advisory-services-photo">
+            <img src="https://images.unsplash.com/photo-1611095973763-414019e72400?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDIzfGFldTZyTC1qNmV3fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" alt="" width="400px" height="200px">
+        </div>
+    </div>
+    <div id="customer-support">CUSTOMER SUPPORT</div>
+    <div id="sub-footer">
+        <div class="photo-text">
+            <div class="photo">
+                <img src="https://images.unsplash.com/photo-1618214394482-caa124b8ad2c?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDU5fGFldTZyTC1qNmV3fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" alt="" width="30%" height="80%">
+            </div>
+            <div class="text">
+                <p class="text-1">콜센타</p>
+                <p class="text-2">궁금하신 점이 있으시면 콜센타로 연락바랍니다.</p>
+            </div>
+        </div>
+        <div class="photo-text">
+            <div class="photo">
+                <img src="https://images.unsplash.com/photo-1548611716-3000815a5803?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDg3fGFldTZyTC1qNmV3fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" alt="" width="30%" height="80%">
+            </div>
+            <div class="text">
+                <p class="text-1">컨설팅</p>
+                <p class="text-2">모든 비지니스 업무에 대한 컨설팅을 부담없이 하세요!</p>
+            </div>
+        </div>
+        <div class="photo-text">
+            <div class="photo">
+                <img src="https://images.unsplash.com/photo-1598979072640-5d8d17a27f23?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDg1fGFldTZyTC1qNmV3fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" alt="" width="30%" height="80%">
+            </div>
+            <div class="text">
+                <p class="text-1">비지니스 자문</p>
+                <p class="text-2">다양한 비지니스 자문을 도와 드립니다.</p>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="text-3">
+            Copyright ⓒ finacc.co.kr. All Rights Reserved
+        </div>
+        <div class="text-4">
+            세정회계법인 | 대표자 : 홍경표 | 주소 : 서울시 서초구 남부순환로 2606 금정빌딩 7층<br>
+            대표이메일 : sean.kang@finacc.co.kr<br><br>
+            <p>Design powered by YouBiz</p> 
+        </div>
+    </div>
+
+    <script>
+        var slideIndex = 0;
+        carousel();
+        
+        function carousel() {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none"; 
+          }
+          slideIndex++;
+          if (slideIndex > x.length) {slideIndex = 1} 
+          x[slideIndex-1].style.display = "block"; 
+          setTimeout(carousel, 5000); 
+        }
+    </script>
+</body>
+</html>

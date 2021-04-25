@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact us</title>
+    <style>
+        body{margin: 0;}
+        *{box-sizing: border-box}
+        #header{
+            width: 100%;
+            height: 62px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            z-index: 1;
+            background-color: rgb(250, 248, 248);
+        }
+        #header a{
+            display: inline-block;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 12px;
+            text-decoration: none;
+            color: black;
+        }
+        #header>a{
+            padding-left: 120px;
+            font-size: 18px;
+            font-weight: 900;
+        }
+        #header ul{
+            width: 850px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: inline;
+        }
+        #header ul li{
+            display: inline-block;
+        }
+        #header ul li:hover>a{
+            color: red;
+        }
+        #header ul li:hover ul{
+            display: block;
+            border-right: 1px solid rgb(250, 248, 248);
+            border-left: 1px solid rgb(250, 248, 248);
+            box-shadow: gainsboro;
+        }
+        #header ul li ul{
+            position: absolute;
+            width: 150px;
+            display: none;
+        }
+        
+        #header ul li ul li{
+            display: block;
+            background-color: rgb(250, 248, 248);
+        }
+        #header ul li ul li a{
+            display: block !important;
+            font-size: 13px;
+            color: gray;
+            border-bottom: 1px solid rgb(250, 248, 248);
+        }
+        #header ul li ul li:hover{
+            padding-left: 5px;
+            background-color: rgb(250, 248, 248);
+        }
+        #header ul li ul li:hover a{
+            color: red;
+            font-size: 13px;
+        }
+        #ko-en{
+            border: 1px solid gainsboro;
+            border-radius: 30px;
+            background-color: rgb(250, 248, 248);
+        }
+        #ko-en .ko-en-en:hover{
+            color: red;
+        }
+        #ContactUs-box{
+            position: relative;
+        }
+        #ContactUs-box #text1{
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, -70%);
+            font-size: 40px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 10px 15px;
+        }
+        #totop{
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0,0,0,0.7);
+            color: white;
+            position: fixed;
+            top: 520px;
+            right: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #totop a{
+            text-decoration: none;
+            color: white;
+        }
+        #nav{
+            float: left;
+            margin-top: 70px;
+            margin-left: 70px;
+            margin-right: 30px;
+            margin-bottom: 80px;
+        }
+        #content #text2{
+            font-size: 14px;
+            margin-top: 70px;
+        }
+        #add-tel-fax{
+            float: left;
+            width: 350px;
+            height: 300px;
+            border: 1px solid gainsboro;
+            margin-top: 70px;
+            margin-left: 70px;
+            margin-bottom: 70px;
+            font-size: 13px;
+            display: grid;
+            grid-template-columns: 85px 265px;
+            grid-template-rows: 100px;
+        }
+        #add-tel-fax .icon{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #add-tel-fax p{
+            font-size: 18px;
+        }
+        #branch{
+            float: left;
+            margin-top: 70px;
+            margin-left: 20px;
+        }
+        #hanmap{
+            width: 1fr;
+            height: 400px;
+            background: gainsboro;
+            border: 1px solid gainsboro;
+            clear: left;
+            
+        }
+        #footer{
+            clear: left;
+            display: grid;
+            grid-template-columns: 0.5fr 0.5fr;
+            grid-template-rows: 150px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+        }
+        #footer .text-3{
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: 20px;
+            padding-left: 70px;
+            font-size: 10px;
+        }
+        #footer .text-4{
+            text-align: right;
+            padding-top: 30px;
+            font-size: 14px;
+            padding-right: 70px;
+        }
+        #footer .text-4 p{
+            font-size: 10px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <a href="index.html">세정회계법인</a>
+        <ul>
+            <li>
+                <a href="">세정회계법인소개 ∨</a>
+                <ul>
+                    <li><a href="introduction.html">회사소개</a></li>
+                    <li><a href="our people.html">멤버소개</a></li>
+                    <li><a href="contact us.html">오시는길</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="">분야별서비스 ∨</a>
+                <ul>
+                    <li><a href="">회계감사</a></li>
+                    <li><a href="">세무</a></li>
+                    <li><a href="">재무자문</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="">커뮤니티 ∨</a>
+                <ul>
+                    <li><a href="">공지안내</a></li>
+                    <li><a href="">질문과답변</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="">글로벌네트웍</a>
+            </li>
+            <li>
+                <a href="">윤리신고센터</a>
+            </li>
+            <li>
+                <div id="ko-en">
+                    <a href="">korean</a><a class="ko-en-en" href="">english</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="ContactUs-box">
+        <img src="https://images.unsplash.com/photo-1574887467771-684837ef363a?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDQ4fGFldTZyTC1qNmV3fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" alt="" width="100%" height="350px">
+        <p id="text1">Contact Us</p>
+    </div>
+    <div id="totop">
+       <a href="#ContactUs-box">△</a> 
+    </div>
+    <div id="add-tel-fax">
+        <span class="icon">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-bXP5ShOaCJ_GvK1UA6Os75_FvDiRBxDPDw&usqp=CAU" alt="" width="40px" height="60px">
+        </span>
+        <span>
+            <p>주소</p>
+            서울시 서초구 남부순환로 2606 금정<br>빌딩 7층
+        </span>
+        <span class="icon">
+            <img src="data:image/png;base64,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" alt="" width="40px" height="60px">
+        </span>
+        <span>
+            <p>대표전화</p>
+            02-1234-5678
+        </span>
+        <span class="icon">
+            <img src="data:image/png;base64,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" alt="" width="40px" height="60px">
+        </span>
+        <span>
+            <p>대표팩스</p>
+            02-3456-7890
+        </span>
+    </div>
+    <div id="branch">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-bXP5ShOaCJ_GvK1UA6Os75_FvDiRBxDPDw&usqp=CAU" alt="" width="15px" height="15px">
+        본사: 서울시 서초구 남부순환로 2606 금정빌딩 7층, 대표전화 : 02-3453-0583 팩스: 02-3453-0584<br>
+        <br>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-bXP5ShOaCJ_GvK1UA6Os75_FvDiRBxDPDw&usqp=CAU" alt="" width="15px" height="15px">
+        양재분실: 서울시 서초구 바우뫼로 182 S&C빌딩 4층, 대표전화 : 02-529-1017, 대표팩스 : 02-529-1018<br>
+        <br>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-bXP5ShOaCJ_GvK1UA6Os75_FvDiRBxDPDw&usqp=CAU" alt="" width="15px" height="15px">
+        수원지점: 수원시 영통구 센트럴타운로 98 4층, 대표전화 : 031-211-3445, 대표팩스 : 031-951-1366<br>
+        <br>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-bXP5ShOaCJ_GvK1UA6Os75_FvDiRBxDPDw&usqp=CAU" alt="" width="15px" height="15px">
+        대전지점: 대전시 서구 둔산동 1397번지 KB 빌딩 502호<br>
+        <br>
+        [지하철]<br>
+        3호선 양재역(서초구청) 5번 출구 방면으로 이동"
+    </div>
+    <div id="hanmap"></div>
+        <script>
+             var HOME_PATH = window.HOME_PATH || '.';
+            var position = new naver.maps.LatLng(37.4840309,127.0347555);
+
+            var map = new naver.maps.Map('map', {
+                center: position,
+                zoom: 15
+            });
+
+            var marker = new naver.maps.Marker({
+                position: position,
+                map: map,
+                icon: {
+                    url: HOME_PATH +'/img/example/ico_pin.jpg', //50, 68 크기의 원본 이미지
+                    size: new naver.maps.Size(25, 34),
+                    scaledSize: new naver.maps.Size(25, 34),
+                    origin: new naver.maps.Point(0, 0),
+                    anchor: new naver.maps.Point(12, 34)
+                }
+            });
+        </script>
+    <div id="footer">
+        <div class="text-3">
+            Copyright ⓒ finacc.co.kr. All Rights Reserved
+        </div>
+        <div class="text-4">
+            세정회계법인 | 대표자 : 홍경표 | 주소 : 서울시 서초구 남부순환로 2606 금정빌딩 7층<br>
+            대표이메일 : sean.kang@finacc.co.kr<br><br>
+            <p>Design powered by YouBiz</p> 
+        </div>
+    </div>
+</body>
+</html>
