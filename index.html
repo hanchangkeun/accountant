@@ -12,6 +12,25 @@
     <style>
         body{margin: 0;}
         *{box-sizing: border-box}
+        #totop{
+            float: right;
+            right: 0px;
+            top: 520px;
+            width: 50px;
+            height: 50px; 
+            background-color: rgba(0,0,0,0.7);
+            color: white;
+            position: fixed;
+            display: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        #totop a{
+            text-decoration: none;
+            color: white;
+        }
         #header{
             width: 100%;
             height: 62px;
@@ -118,22 +137,6 @@
             color: white;
             font-size: 15px;
             padding: 10px 20px;
-        }
-        #totop{
-            width: 50px;
-            height: 50px;
-            background-color: rgba(0,0,0,0.7);
-            color: white;
-            position: fixed;
-            top: 520px;
-            right: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        #totop a{
-            text-decoration: none;
-            color: white;
         }
         #audit-assurance-box{
             display: grid;
@@ -283,6 +286,25 @@
     </style>
 </head>
 <body>
+    <div id="totop">
+        <div id="triangle">△</div> 
+    </div>
+    <script>
+        $(function(){
+            $(window).scroll(function(){
+                var nowScrollVar = $(this).scrollTop();
+                if(nowScrollVar >= 50 && nowScrollVar <= 2000 ){
+                    $("#totop").show();
+                }else if(nowScrollVar <= 49){
+                    $("#totop").hide();
+                }
+            });
+
+            $("#triangle").click(function(){
+                window.scroll({top:0, right:0, behavior:"smooth"});
+            });
+        });
+    </script> 
     <div id="header">
         <a href="#">세정회계법인</a>
         <ul>
@@ -323,16 +345,29 @@
         </ul>
     </div>
     <div id="header-img"> <!-- java script 같이 사용함 -->
-        <img class="mySlides" src="https://images.unsplash.com/photo-1604328699206-5f24c5ed8dd4?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDc1fGFldTZyTC1qNmV3fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" width="100%" height="550px">
-        <img class="mySlides" src="https://images.unsplash.com/photo-1587440871875-191322ee64b0?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDExfGFldTZyTC1qNmV3fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" width="100%" height="550px">
-        <img class="mySlides" src="https://images.unsplash.com/photo-1560264418-c4445382edbc?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDEzfGFldTZyTC1qNmV3fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" width="100%" height="550px">
-        <img class="mySlides" src="https://images.unsplash.com/photo-1611095564985-89765398121e?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDI2fGFldTZyTC1qNmV3fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" width="100%" height="550px">
+        <img class="mySlides" src="https://images.unsplash.com/photo-1604328699206-5f24c5ed8dd4?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDc1fGFldTZyTC1qNmV3fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" width="100%" height="600px">
+        <img class="mySlides" src="https://images.unsplash.com/photo-1587440871875-191322ee64b0?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDExfGFldTZyTC1qNmV3fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" width="100%" height="600px">
+        <img class="mySlides" src="https://images.unsplash.com/photo-1560264418-c4445382edbc?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDEzfGFldTZyTC1qNmV3fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" width="100%" height="600px">
+        <img class="mySlides" src="https://images.unsplash.com/photo-1611095564985-89765398121e?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDI2fGFldTZyTC1qNmV3fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" width="100%" height="600px">
         <div class="welcome">Audit and Assurance</div>
         <div class="welcome2">Read more</div>
     </div>
-    <div id="totop">
-        <a href="#header-img">△</a> 
-    </div>
+    <script>
+        var slideIndex = 0;
+        carousel();
+        
+        function carousel() {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none"; 
+          }
+          slideIndex++;
+          if (slideIndex > x.length) {slideIndex = 1} 
+          x[slideIndex-1].style.display = "block"; 
+          setTimeout(carousel, 5000); 
+        }
+    </script>
     <div id="audit-assurance-box">
         <div id="audit-assurance">
             <p id="audit-assurance-text">Audit and Assurance(회계감사)</p>
@@ -427,21 +462,6 @@
         </div>
     </div>
 
-    <script>
-        var slideIndex = 0;
-        carousel();
-        
-        function carousel() {
-          var i;
-          var x = document.getElementsByClassName("mySlides");
-          for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none"; 
-          }
-          slideIndex++;
-          if (slideIndex > x.length) {slideIndex = 1} 
-          x[slideIndex-1].style.display = "block"; 
-          setTimeout(carousel, 5000); 
-        }
-    </script>
+    
 </body>
 </html>
