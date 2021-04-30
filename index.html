@@ -27,10 +27,7 @@
             justify-content: center;
             cursor: pointer;
         }
-        #totop a{
-            text-decoration: none;
-            color: white;
-        }
+        
         #header{
             width: 100%;
             height: 62px;
@@ -286,9 +283,7 @@
     </style>
 </head>
 <body>
-    <div id="totop">
-        <div id="triangle">△</div> 
-    </div>
+    <div id="totop">△</div>
     <script>
         $(function(){
             $(window).scroll(function(){
@@ -300,7 +295,7 @@
                 }
             });
 
-            $("#triangle").click(function(){
+            $("#totop").click(function(){
                 window.scroll({top:0, right:0, behavior:"smooth"});
             });
         });

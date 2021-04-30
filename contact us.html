@@ -4,11 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=051dms27ow"></script>
     <title>contact us</title>
     <style>
         body{margin: 0;}
         *{box-sizing: border-box}
+        #totop{
+            float: right;
+            top: 520px;
+            right: 0px;
+            position: fixed;
+            display: none;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0,0,0,0.7);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        
         #header{
             width: 100%;
             height: 62px;
@@ -97,22 +117,7 @@
             color: white;
             padding: 10px 15px;
         }
-        #totop{
-            width: 50px;
-            height: 50px;
-            background-color: rgba(0,0,0,0.7);
-            color: white;
-            position: fixed;
-            top: 520px;
-            right: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        #totop a{
-            text-decoration: none;
-            color: white;
-        }
+        
         #nav{
             float: left;
             margin-top: 70px;
@@ -187,6 +192,23 @@
     </style>
 </head>
 <body>
+    <div id="totop">△</div>
+    <script>
+        $(function(){
+            $(window).scroll(function(){
+                var nowScrollVar = $(window).scrollTop();
+                if(nowScrollVar >= 80 && nowScrollVar <= 2000){
+                    $("#totop").show();
+                }else if(nowScrollVar <= 79){
+                    $("#totop").hide();
+                }
+            });
+
+            $("#totop").click(function(){
+                window.scroll({top:0, right:0, behavior:"smooth"});
+            });
+        });
+    </script>
     <div id="header">
         <a href="index.html">세정회계법인</a>
         <ul>
@@ -230,9 +252,7 @@
         <img src="https://images.unsplash.com/photo-1574887467771-684837ef363a?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDQ4fGFldTZyTC1qNmV3fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" alt="" width="100%" height="350px">
         <p id="text1">Contact Us</p>
     </div>
-    <div id="totop">
-       <a href="#ContactUs-box">△</a> 
-    </div>
+    
     <div id="add-tel-fax">
         <span class="icon">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-bXP5ShOaCJ_GvK1UA6Os75_FvDiRBxDPDw&usqp=CAU" alt="" width="40px" height="60px">
